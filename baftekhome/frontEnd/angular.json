@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ang-app"
+  "defaultProject": "ang-app",
+  "cli": {
+    "analytics": "5bd41abc-9c37-486d-8790-ff7b91cddaf7"
+  }
 }
