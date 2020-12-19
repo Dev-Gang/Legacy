@@ -1,0 +1,57 @@
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: rgb(196, 208, 223);
+  background-image: url("../../assets/host-image.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: rgb(204, 193, 178);
+  background-image: url("../../assets/geust.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-image: linear-gradient(to right, #daaa63 0%, #df6060 51%, #f3bb71 100%);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  background-size: 200% auto;
+  font-size: 1rem;
+  transition: 0.5s ease;
+  box-shadow: 0 0 20px #eee;
+  cursor: pointer;
+  border-width: 1px;
+  border-radius: 2rem;
+  outline: 0;
+}

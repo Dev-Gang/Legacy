@@ -13,6 +13,7 @@ import { GuestSinglePostViewComponent } from './guest/guest-single-post-view/gue
 import { HostSinglePostViewComponent } from './host/host-single-post-view/host-single-post-view.component';
 import { GuestProfileComponent } from './guest/guest-profile/guest-profile.component';
 import { HostProfileComponent } from './host/host-profile/host-profile.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HostProfileComponent } from './host/host-profile/host-profile.component
     GuestSinglePostViewComponent,
     HostSinglePostViewComponent,
     GuestProfileComponent,
-    HostProfileComponent
+    HostProfileComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
