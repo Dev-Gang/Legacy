@@ -1,4 +1,5 @@
 const express = require("express");
+const cors=require('cors');
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
@@ -9,6 +10,9 @@ const port = process.env.PORT || 3000;
 const Home = require("../database/homes.js");
 const Users = require("../database/users.js");
 const Image = require("../database/images.js");
+
+app.use(cors());
+
 
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
@@ -27,8 +31,6 @@ db.once("open", function () {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.set("views", path.join(__dirname, "./react-client/dist"));
-app.use(express.static("./react-client/dist"));
 
 app.post("/api/newuser", (req, res) => {
   const saltRounds = 10;

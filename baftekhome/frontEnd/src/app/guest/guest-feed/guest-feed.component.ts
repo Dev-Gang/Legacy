@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../http.service';
 
 @Component({
   selector: 'app-guest-feed',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestFeedComponent implements OnInit {
 
-  constructor() { }
+  homes: any;
 
-  ngOnInit(): void {
+  constructor(private _http: HttpService) { }
+
+  ngOnInit() {
+    this._http.getHomes().subscribe((data) => {
+      this.homes = data
+      console.log(this.homes);
+    }
+  );
   }
 
 }
