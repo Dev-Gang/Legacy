@@ -13,6 +13,18 @@ import { GuestSinglePostViewComponent } from './guest/guest-single-post-view/gue
 import { HostSinglePostViewComponent } from './host/host-single-post-view/host-single-post-view.component';
 import { GuestProfileComponent } from './guest/guest-profile/guest-profile.component';
 import { HostProfileComponent } from './host/host-profile/host-profile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';  // Add this
+
+@NgModule({
+  imports: [NgbPaginationModule, NgbAlertModule, FontAwesomeModule],
+})
+export class YourAppModule {
+}
+
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,11 +38,14 @@ import { HostProfileComponent } from './host/host-profile/host-profile.component
     GuestSinglePostViewComponent,
     HostSinglePostViewComponent,
     GuestProfileComponent,
-    HostProfileComponent
+    HostProfileComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
