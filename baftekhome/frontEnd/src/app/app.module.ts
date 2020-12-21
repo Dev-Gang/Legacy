@@ -14,6 +14,8 @@ import { HostSinglePostViewComponent } from './host/host-single-post-view/host-s
 import { GuestProfileComponent } from './guest/guest-profile/guest-profile.component';
 import { HostProfileComponent } from './host/host-profile/host-profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

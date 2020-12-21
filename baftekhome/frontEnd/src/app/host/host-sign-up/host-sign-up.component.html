@@ -1,32 +1,66 @@
 <div class="login-page">
-    <h2>Sign up as a Host</h2>
-    <div class="form">
-        <form class="register-form forms">
-            <input name="fname" type="text" placeholder="first name" />
-            <input name="lname" type="text" placeholder="last name" />
-            <input name="username" type="text" placeholder="username" />
-            <input name="password" type="password" placeholder="password" />
-            <input name="email" type="text" placeholder="email" />
-            <input name="adress" type="text" placeholder="adress" />
-            <input name="image" type="file" placeholder="image" />
-            <input name="rate" type="text" placeholder="rate" />
-            <button type="submit">create</button>
-            <p class="message">Already registered?
-                    <a class="log switch" href="#">Sign In</a>
-            </p>
-        </form>
-        <form class="login-form forms hide">
-            <input name="email" type="text" placeholder="email" />
-            <input name="password" type="password" placeholder="password" />
-            <button type="submit">login</button>
-            <p class="message">Not registered?
-                    <a class="reg switch" href="#">Create an account</a>
-            </p>
-        </form>
-    </div>
-  
+  <h2>Sign up as a Host</h2>
+  <div class="form">
+    <form
+      class="register-form forms"
+      [formGroup]="hostForm"
+      (ngSubmit)="create()"
+    >
+      <input
+        name="fname"
+        type="text"
+        placeholder="first name"
+        formControlName="firstNameHost"
+      />
+      <input
+        name="lname"
+        type="text"
+        placeholder="last name"
+        formControlName="lastNameHost"
+      />
+      <input
+        name="username"
+        type="text"
+        placeholder="username"
+        formControlName="userNameHost"
+      />
+      <input
+        name="email"
+        type="text"
+        placeholder="email"
+        formControlName="emailHost"
+      />
+      <input
+        name="password"
+        type="password"
+        placeholder="password"
+        formControlName="passwordHost"
+      />
+      <input
+        name="adress"
+        type="text"
+        placeholder="adress"
+        formControlName="adressHost"
+      />
+      <input
+        name="image"
+        type="file"
+        placeholder="image"
+        formControlName="imageHost"
+      />
 
-
-
-
+      <button type="submit">create</button>
+      <p class="message">
+        Already registered?<a class="log switch" href="#">Sign In</a>
+      </p>
+    </form>
+    <form class="login-form forms hide">
+      <input name="email" type="text" placeholder="emailHost" />
+      <input name="password" type="password" placeholder="passwordHost" />
+      <button type="submit">login</button>
+      <p class="message">
+        Not registered?<a class="reg switch" href="#">Create an account</a>
+      </p>
+    </form>
+  </div>
 </div>
