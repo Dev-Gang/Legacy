@@ -1,10 +1,9 @@
 body {
   font-size: 1rem;
   line-height: 1.5;
-  font-family: 'Lato', sans-serif;
-  background-color: #dedede;
-}
+  // background-color: #dedede;
 
+}
 .button-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,24 +22,36 @@ body {
     justify-self: center;
     text-align: center;
     width:500px;
+
+    
+    
+
   }
 }
 
 .login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+  background-image: url(../../../assets/guest.jpg);
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  height: 100vh;
+  opacity: .9;
+
   // display:flex;
   // justify-content: space-between;
 }
 .form {
-  position: left;
-  z-index: 1;
+  position: center;
   background: #FFFFFF;
   width: 500px;
-  margin:0;
-  padding: 45px;
+  // margin:30px;
+  padding: 20px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-left:500px;
+  padding-bottom: 50px;
+  opacity: .8;
+  margin-left:700px;
+  margin-top:50px
 }
 .form input {
   font-family: "Lato", sans-serif;
@@ -55,14 +66,14 @@ body {
 }
 
 .form input:active {
-  background: #fff02;
+  background:  linear-gradient(to right, #daaa63 0%, #df6060 51%, #f3bb71 100%)
 }
 
 .form button {
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background-image: linear-gradient(to right, #dab782 0%, #eea6a6 51%, #eed4b2 100%);
+  background-image: linear-gradient(to right, #daaa63 0%, #df6060 51%, #f3bb71 100%);
   width: 100%;
   border: 0;
   padding: 15px;
@@ -74,7 +85,7 @@ body {
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background-position: right center;
+  background-position: center;
 }
 .form .message {
   margin: 15px 0 0;
@@ -96,11 +107,4 @@ button {
 form.hide {
   display: none;
   transition: all 1s ease;
-}
-
-img {
-  width: 600px;
-  height: 400px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-
 }

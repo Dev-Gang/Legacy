@@ -15,11 +15,16 @@ import { GuestProfileComponent } from './guest/guest-profile/guest-profile.compo
 import { HostProfileComponent } from './host/host-profile/host-profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';  // Add this
+
 @NgModule({
-  imports: [NgbPaginationModule, NgbAlertModule],
+  imports: [NgbPaginationModule, NgbAlertModule, FontAwesomeModule],
 })
 export class YourAppModule {
 }
+
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -33,12 +38,14 @@ export class YourAppModule {
     GuestSinglePostViewComponent,
     HostSinglePostViewComponent,
     GuestProfileComponent,
-    HostProfileComponent
+    HostProfileComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

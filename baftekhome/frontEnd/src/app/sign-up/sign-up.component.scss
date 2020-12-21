@@ -1,0 +1,71 @@
+
+.split {
+  height: 800px;
+  width: 50%;
+  // position: fixed;
+  z-index: 1;
+  top: 0;
+   overflow-x: hidden;
+  margin-top: 0px;
+}
+
+/* Control the left side */
+.left {
+  float: left;
+  // background-color: rgb(196, 208, 223);
+  background-image: url("../../assets/family-moving-and-using-boxes.jpg") ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: .7;
+  margin-top: 0px;
+  
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: rgb(204, 193, 178);
+  background-image: url("../../assets/host.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: .7;
+}
+
+/* If you want the content centered horizontally and vertically */
+// .centered {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+// }
+
+.button {
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-image: linear-gradient(to right, #ac8d5e 0%, #d87d7d 51%, #eed4b2 100%);
+  width: 40%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  background-size: 300% auto;
+  font-size: 1rem;
+  transition: 0.5s ease;
+  box-shadow: 0 0 20px #eee;
+  cursor: pointer;
+  border-width: 1px;
+  border-radius: 2rem;
+  outline: 0;
+  text-align: center;
+  margin:30px
+  
+}
+h2.button:hover, h2.button:active {
+  font-size: 150%;
+  background-image: linear-gradient(to right, #d3a866 0%, #c97a7a 51%, #bea078 100%);
+  
+}
+.form button:hover,.form button:active,.form button:focus {
+  background-position: right center;
+}

@@ -22,25 +22,34 @@ body {
     width: 50%;
     justify-self: center;
     text-align: center;
-    width:500px;
+    // width:500px;
+    // height:200px;
   }
 }
 
 .login-page {
-  width: 360px;
+  width: 100%;
+  height: 800px;
   padding: 8% 0 0;
-  margin: auto;
+  // margin: auto;
   display:flex;
   justify-content: space-between;
+  background-image: url('../../assets/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top:0px
+  
 }
 .form {
   position: left;
   z-index: 1;
   background: #FFFFFF;
-  width: 500px;
+  width: 400px;
   margin: 0 auto 100px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  opacity: .9;
+  margin-bottom: 250px;
 }
 .form input {
   font-family: "Lato", sans-serif;
@@ -93,10 +102,7 @@ button {
   outline: 0;
 }
 
-form.hide {
-  display: none;
-  transition: all 1s ease;
-}
+
 
 img {
   width: 600px;
