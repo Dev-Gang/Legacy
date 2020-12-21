@@ -11,9 +11,9 @@ body {
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.075);
-  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
-  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.075);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.075);
   text-align: center;
 }
 
@@ -61,11 +61,25 @@ h4 {
   font-size: 13px;
   color: #00baff;
   letter-spacing: 1px;
-  margin-bottom: 25px
+  margin-bottom: 25px;
 }
 p {
   font-size: 16px;
   line-height: 26px;
   margin-bottom: 20px;
   color: #666;
+}
+.btn-round-lg {
+  border-radius: 22.5px;
+}
+.btn-round {
+  border-radius: 17px;
+}
+.btn-round-sm {
+  border-radius: 15px;
+}
+.btn-round-xs {
+  border-radius: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

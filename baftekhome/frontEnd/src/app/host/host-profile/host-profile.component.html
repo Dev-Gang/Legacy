@@ -1,19 +1,42 @@
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container">
   <div class="avatar-flip">
-    <img
-      src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg"
-      height="150"
-      width="150"
-    />
+    <img src="{{ profile.image }}" height="150" width="150" />
   </div>
-  <h2>John Smith</h2>
-  <h4>HOVER OVER CONTAINER</h4>
+  <h2>{{ profile.userName }}</h2>
+  <h4>{{ profile.email }}</h4>
   <p>
-    Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed
-    diam eget risus varius blandit sit amet non magna ip sum dolore.
+    {{ profile.firstName }}
   </p>
   <p>
-    Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non
-    metus auctor fringilla.
+    {{ profile.lastName }}
   </p>
+  <p>{{ profile.password }}</p>
+  <p>{{ profile.adress }}</p>
+  <p>{{ profile.rate }}</p>
+</div>
+<div style="margin-top: 50px; margin-bottom: 50px" class="container">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p>
+        <button
+          type="button"
+          class="btn btn-primary btn-round-lg btn-lg"
+          href="#"
+          routerLink="/history"
+        >
+          History
+        </button>
+      </p>
+    </div>
+  </div>
 </div>
