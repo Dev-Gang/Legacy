@@ -15,6 +15,7 @@ import { HostSinglePostViewComponent } from "./host/host-single-post-view/host-s
 import { GuestProfileComponent } from "./guest/guest-profile/guest-profile.component";
 import { HostProfileComponent } from "./host/host-profile/host-profile.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SignUpComponent } from "./sign-up/sign-up.component";
 
 
 @NgModule({
