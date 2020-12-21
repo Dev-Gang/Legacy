@@ -1,6 +1,7 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var homeSchema = mongoose.Schema({
+const homeSchema = mongoose.Schema({
+  _id: { type: String },
   firstName: String,
   lastName: String,
   image: String,
@@ -11,6 +12,6 @@ var homeSchema = mongoose.Schema({
   category: String
 });
 
-var Home = mongoose.model("Home", homeSchema);
+const Home = mongoose.model("Home", homeSchema);
 
 module.exports = Home;
