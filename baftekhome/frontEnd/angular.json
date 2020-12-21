@@ -31,7 +31,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+             
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
             "scripts": []
           },
@@ -94,6 +97,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "ang-app"
+  "defaultProject": "ang-app",
+  "cli": {
+    "analytics": "5bd41abc-9c37-486d-8790-ff7b91cddaf7"
+  }
 }
