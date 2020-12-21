@@ -1,6 +1,18 @@
-<div class="container">
-  <h1>Host History</h1>
-  <div>
-    <p>Here will be the list of posts when user logged in as a host (history)</p>
+<div>
+  <h4>Houses History</h4>
+  <button type="button" class="btn btn-link" routerLink="/formulaire">
+    New post</button
+  ><br /><br />
+</div>
+<div class="card-group">
+  <div class="card" *ngFor="let item of data" (click)="showDetails(item)">
+    <img src="{{ item.url }}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <p class="card-text">{{ item.description }}</p>
+      <p class="card-text">
+        <small class="text-muted">{{ item.time }}</small>
+      </p>
+    </div>
   </div>
 </div>
