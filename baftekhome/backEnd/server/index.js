@@ -8,7 +8,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const port = process.env.PORT || 3000;
 const Home = require("../database/homes.js");
-const Users = require("../database/users.js");
+const guests = require("../database/guests.js");
+const Host = require("../database/hosts.js");
 const Image = require("../database/images.js");
 
 app.use(cors());
@@ -32,7 +33,13 @@ db.once("open", function () {
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.post("/api/newuser", (req, res) => {
+app.post("/api/newguest", (req, res) => {
+  console.log("in guest");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   const saltRounds = 10;
   var obj = req.body;
   bcrypt.genSalt(saltRounds, (err, salt) => {
@@ -41,14 +48,17 @@ app.post("/api/newuser", (req, res) => {
     }
     bcrypt.hash(req.body.password, salt, (err, hash) => {
       obj.password = hash;
-      Users.create(obj);
+      console.log(obj);
+      guests.create(obj, (err, result) => {
+        err ? console.log("err", err) : console.log("result", result);
+      });
       res.end();
     });
   });
 });
 
-app.post("/api/users", (req, res) => {
-  Users.find({ email: req.body.email }, function (err, docs) {
+app.post("/api/guests", (req, res) => {
+  guests.find({ email: req.body.email }, function (err, docs) {
     if (err) {
       console.log(err);
     }
@@ -68,20 +78,70 @@ app.post("/api/users", (req, res) => {
   });
 });
 
+app.post("/host/createhost", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  console.log("body", req.body);
+  const saltRounds = 10;
+  var obj = req.body;
+  console.log("here");
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    if (err) {
+      throw err;
+    }
+
+    bcrypt.hash(req.body.password, salt, (err, hash) => {
+      obj.password = hash;
+      Host.create(obj);
+      res.end();
+    });
+  });
+});
+
+
+// var hosts = mongoose.model("hosts", hostSchema);
+// module.exports = hosts;
+app.post("/api/hosts", (req, res) => {
+  Host.find({ email: req.body.email }, function (err, docs) {
+    if (err) {
+      console.log(err);
+    }
+    bcrypt.compare(req.body.password, docs[0].password, function (err, result) {
+      if (err) {
+        console.log(err);
+      }
+      if (result) {
+        const token = jwt.sign(
+          { email: req.body.email, password: req.body.password },
+          "dT8tO3hL1mA7tN1gL5r"
+        );
+        res.send({ docs: docs, token: token });
+        res.end();
+      }
+    });
+  });
+});
 app.post("/checkToken", (req, res) => {
-  jwt.verify(req.body.token, "dT8tO3hL1mA7tN1gL5r", (err, user) => {
-    if (user) {
-      Users.find({ email: user.email }, function (err, docs) {
+  jwt.verify(req.body.token, "dT8tO3hL1mA7tN1gL5r", (err, guest) => {
+    if (guest) {
+      guests.find({ email: guest.email }, function (err, docs) {
         if (err) {
           console.log(err);
         }
-        bcrypt.compare(user.password, docs[0].password, function (err, result) {
-          if (err) {
-            console.log(err);
-          } else if (result) {
-            res.send(docs);
+        bcrypt.compare(
+          guest.password,
+          docs[0].password,
+          function (err, result) {
+            if (err) {
+              console.log(err);
+            } else if (result) {
+              res.send(docs);
+            }
           }
-        });
+        );
       });
     }
   });

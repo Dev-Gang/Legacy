@@ -20,6 +20,6 @@
     <p class="country">{{ home.location }}</p>
     <!-- <a class="site" href="{{ home.website_url }}">site</a> -->
     <img src={{home.image}} class="postImg"/>
-    <button class="show">Show details</button>
+    <button (click)="gotopostview(home._id)" class="show">Show details</button>
   </li>
 </ul>

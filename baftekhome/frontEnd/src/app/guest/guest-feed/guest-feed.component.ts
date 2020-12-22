@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from '../../http.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class GuestFeedComponent implements OnInit {
 
   homes: any;
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: HttpService,private router:Router) { }
 
   ngOnInit() {
     this._http.getHomes().subscribe((data) => {
@@ -19,5 +20,8 @@ export class GuestFeedComponent implements OnInit {
     }
   );
   }
+public gotopostview(id:any){
+this.router.navigate(['/GuestSinglePostView',id])
 
+}
 }
