@@ -10,7 +10,7 @@ const hostSchema = mongoose.Schema({
   },
   passwordHost: String,
   adressHost: String,
-  // rate: String,
+  rate: String,
   imageHost: String
 });
 

@@ -1,6 +1,58 @@
-<div class="container">
-  <h1>home page for all users</h1>
-  <div>
-    <p>Here will be the list of posts <strong>(user not logged in)</strong></p>
+<ngb-carousel *ngIf="images" class="f">
+  <ng-template ngbSlide class="cont">
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="btw">
+  <div class="about">
+    <div class="left">
+      <ul>
+        <h5>About Us :</h5>
+        <li class="first list"><i class="fa fa-building"></i> Our Activity</li>
+        <li class="first list">
+          <i class="fa fa-envelope-open"></i> Contact Us
+        </li>
+        <li class="first list"><i class="fa fa-book"></i> Directions</li>
+      </ul>
+    </div>
+    <div class="right">
+      <ul>
+        <h5>Follow Us:</h5>
+        <li><i class="fa fa-facebook-square"></i> Facebook</li>
+        <li><i class="fa fa-twitter"></i> Twitter</li>
+        <li><i class="fa fa-instagram"></i> Instagram</li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align: right">
+    <img
+      src="./assets/app-store-google-play-logo-4A2747BF5E-seeklogo.com.png"
+      class="icons"
+    />
+    <p class="app">Our Applications :</p>
   </div>
 </div>
