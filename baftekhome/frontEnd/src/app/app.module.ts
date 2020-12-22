@@ -19,12 +19,16 @@ import { HttpClientModule } from '@angular/common/http';  // Add this
 
 @NgModule({
   imports: [NgbPaginationModule, NgbAlertModule, FontAwesomeModule],
+  declarations: [SearchbyLocationComponent, PostComponent],
 })
 export class YourAppModule {
 }
 
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchbyLocationComponent } from './searchby-location/searchby-location.component';
+import { FirstComponent } from './first/first.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HostSinglePostViewComponent,
     GuestProfileComponent,
     HostProfileComponent,
-    SignUpComponent
+    SignUpComponent,
+    FirstComponent,
   ],
   imports: [
     BrowserModule,

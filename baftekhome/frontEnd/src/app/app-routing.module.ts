@@ -9,6 +9,8 @@ import { GuestFeedComponent } from './guest/guest-feed/guest-feed.component';
 import { HostHistoryComponent } from './host/host-history/host-history.component';
 import { HostProfileComponent } from './host/host-profile/host-profile.component';
 import { HostSinglePostViewComponent } from './host/host-single-post-view/host-single-post-view.component';
+import{FirstComponent} from './first/first.component';
+import {PostComponent} from './post/post.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: "history", component: HostHistoryComponent },
   { path: "profile", component: HostProfileComponent },
   { path: "newPost", component: HostSinglePostViewComponent },
-  { path: "formulaire", component: HostSignUpComponent }
+  { path: "formulaire", component: PostComponent},
+  { path: "first", component: FirstComponent},
+
 ];
 
 @NgModule({
