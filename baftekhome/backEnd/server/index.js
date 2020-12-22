@@ -44,25 +44,23 @@ app.post("/api/newuser", (req, res) => {
     });
   });
 });
-
+app.post("api/getUserInfo/", (req, res) => {
+  console.log(req.body.email);
+  Users.find({ email: req.body.email }, function (err, user) {
+    if (err) {
+      return "NOT OK";
+    } else {
+      res.json(user);
+    }
+  });
+});
 app.post("/api/users", (req, res) => {
-  Users.find({ email: req.body.email }, function (err, docs) {
+  Users.find({ email: req.body.email }, function (err, data) {
     if (err) {
       console.log(err);
     }
-    bcrypt.compare(req.body.password, docs[0].password, function (err, result) {
-      if (err) {
-        console.log(err);
-      }
-      if (result) {
-        const token = jwt.sign(
-          { email: req.body.email, password: req.body.password },
-          "dT8tO3hL1mA7tN1gL5r"
-        );
-        res.send({ docs: docs, token: token });
-        res.end();
-      }
-    });
+   
+    res.send(data[0]);
   });
 });
 
@@ -86,9 +84,13 @@ app.post("/checkToken", (req, res) => {
 });
 
 app.put("/updateHome/:id", (req, res) => {
-  Home.findByIdAndUpdate(req.params.id, req.body, (err, docs) => {
-    if (err) console.log(err);
-    res.send(docs);
+  console.log(req.body.email);
+  Users.find({ email: req.body.email }, function (err, user) {
+    if (err) {
+      return "NOT OK";
+    } else {
+      res.json(user);
+    }
   });
 });
 
@@ -152,6 +154,14 @@ app.delete("/api/homes/:_id", (req, res) => {
     res.send(docs);
     res.end();
   });
+});
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
 app.listen(port, () => {

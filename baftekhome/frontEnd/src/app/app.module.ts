@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -14,6 +15,7 @@ import { HostSinglePostViewComponent } from "./host/host-single-post-view/host-s
 import { GuestProfileComponent } from "./guest/guest-profile/guest-profile.component";
 import { HostProfileComponent } from "./host/host-profile/host-profile.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NewPostComponent } from './host/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     GuestSinglePostViewComponent,
     HostSinglePostViewComponent,
     GuestProfileComponent,
-    HostProfileComponent
+    HostProfileComponent,
+    NewPostComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-host-profile",
@@ -6,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./host-profile.component.scss"]
 })
 export class HostProfileComponent implements OnInit {
+  pathOrigin = "http://localhost:3000/";
   profile: any = {
     userName: "aa",
     email: "aa",
@@ -18,7 +20,17 @@ export class HostProfileComponent implements OnInit {
     rate: "aa"
   };
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.http
+      .post(this.pathOrigin + "api/users", { email: "eeee" })
+      .subscribe((data: any) => {
+        if (data) {
+          this.profile.firstName = data.firstName;
+          this.profile.lastName = data.lastName;
+          this.profile.email = data.email;
+        }
+      });
+  }
 }
