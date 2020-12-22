@@ -7,7 +7,8 @@ import { HostSignUpComponent } from "./host/host-sign-up/host-sign-up.component"
 import { HostHistoryComponent } from "./host/host-history/host-history.component";
 import { HostProfileComponent } from "./host/host-profile/host-profile.component";
 import { HostSinglePostViewComponent } from "./host/host-single-post-view/host-single-post-view.component";
-const routes: Routes = [
+import { NewPostComponent } from "./host/new-post/new-post.component";
+const routes: Routes = [ 
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
   { path: "sign-up", component: GuestSignUpComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: "history", component: HostHistoryComponent },
   { path: "profile", component: HostProfileComponent },
   { path: "newPost", component: HostSinglePostViewComponent },
-  { path: "formulaire", component: HostSignUpComponent }
+  { path: "formulaire", component: NewPostComponent }
 ];
 
 @NgModule({
