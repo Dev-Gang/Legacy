@@ -1,6 +1,42 @@
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <div class="container">
-  <h1>Host Profile</h1>
-  <div>
-    <p>Here will be the host profile</p>
+  <div class="avatar-flip">
+    <img src="{{ profile.image }}" height="150" width="150" />
+  </div>
+  <h2>{{ profile.userName }}</h2>
+  <h4>{{ profile.email }}</h4>
+  <p>
+    {{ profile.firstName }}
+  </p>
+  <p>
+    {{ profile.lastName }}
+  </p>
+  <p>{{ profile.password }}</p>
+  <p>{{ profile.adress }}</p>
+  <p>{{ profile.rate }}</p>
+</div>
+<div style="margin-top: 50px; margin-bottom: 50px" class="container">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <p>
+        <button
+          type="button"
+          class="btn btn-primary btn-round-lg btn-lg"
+          href="#"
+          routerLink="/history"
+        >
+          History
+        </button>
+      </p>
+    </div>
   </div>
 </div>

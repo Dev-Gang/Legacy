@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+$primary:   #444341;
+// // background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%)
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+
+header {
+    background: $primary;
+    padding: 1em 0;
+    height: 7.65vh;
+    width: 100%;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    .logo {
+        width: 180px;
+        padding: 0;
+        top: 0;
+        height:10hv ;
+    }
+
+    nav {
+        float: right;
+        // height: 30px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+                padding: 2em;
+
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 2em;
+}
+.footer {
+    background-color: rgb(17, 16, 16);
+    height: 8vh;
+    // position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding:5px;
+     div i  {
+        color: white ;
+     }
+    
+
+
+}
+
+p{
+    text-align: center;
+    color: white;
+}
+
+
+
+// /* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

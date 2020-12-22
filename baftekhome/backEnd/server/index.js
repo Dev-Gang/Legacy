@@ -1,4 +1,5 @@
 const express = require("express");
+const cors=require('cors');
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
@@ -10,7 +11,10 @@ const Home = require("../database/homes.js");
 const guests = require("../database/guests.js");
 const Host = require("../database/hosts.js");
 const Image = require("../database/images.js");
-const cors = require("cors");
+
+app.use(cors());
+
+
 mongoose.set("useCreateIndex", true);
 mongoose.connect(
   "mongodb+srv://hbib:hbib@cluster0.m3m3t.mongodb.net/BaftekHome?retryWrites=true&w=majority",
@@ -28,11 +32,6 @@ db.once("open", function () {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
-
-app.get("/", (req, res) => {
-  res.send("hello");
-});
 
 app.post("/api/newguest", (req, res) => {
   console.log("in guest");
@@ -93,6 +92,7 @@ app.post("/host/createhost", (req, res) => {
     if (err) {
       throw err;
     }
+
     bcrypt.hash(req.body.password, salt, (err, hash) => {
       obj.password = hash;
       Host.create(obj);
@@ -100,6 +100,8 @@ app.post("/host/createhost", (req, res) => {
     });
   });
 });
+
+
 // var hosts = mongoose.model("hosts", hostSchema);
 // module.exports = hosts;
 app.post("/api/hosts", (req, res) => {

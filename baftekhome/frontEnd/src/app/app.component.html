@@ -1,18 +1,22 @@
-
-
 <header>
   <div class="container">
-    <a href="#/" ><img src="../logo.PNG"/></a>
+  <img src="../assets/logo.png" class="logo" />
     <nav>
       <ul>
         <li><a href="#" routerLink="/"> Home </a></li>
-        <li><a href="#" routerLink="/login"> Login</a></li>
+        <li>
+          <a href="#" routerLink="/login"> Login</a>
+        </li>
         <li><a href="#" routerLink="/sign-up"> Sign Up</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
-<div class="container">
-<router-outlet></router-outlet>
+<div >
+  <router-outlet></router-outlet>
 </div>
+<footer class="footer">
+<div><p style="color:white;text-align:center">&copy; Copyright 2020</p></div>
+</footer>
+
+
