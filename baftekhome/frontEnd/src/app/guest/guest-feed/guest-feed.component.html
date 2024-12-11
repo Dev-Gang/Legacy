@@ -7,19 +7,21 @@
 <div class="dropdown">
   <button class="dropbtn"><i class="fa fa-filter"></i> Filter</button>
   <div class="dropdown-content">
-  <p class="filter"> location</p>
-  <p class="filter"> categorie</p>
-  <p class="filter"> price range</p>
+  <p class="filter" (click)="filter('s+1')"> s+0 </p>
+  <p class="filter" (click)="filter('s+1')"> s+1</p>
+  <p class="filter" (click)="filter('s+2')"> s+2</p>
+  <p class="filter" (click)="filter('s+3')"> s+3</p>
+  <p class="filter" (click)="filter('villa')"> villa</p>
   </div>
 </div>
 <h1>all posts</h1>
 
-<ul *ngIf="homes">
-  <li *ngFor="let home of homes">
+<ul *ngIf="homeFilter">
+  <li *ngFor="let home of homeFilter">
     <p class="name">{{ home.firstName }}</p>
     <p class="country">{{ home.location }}</p>
     <!-- <a class="site" href="{{ home.website_url }}">site</a> -->
     <img src={{home.image}} class="postImg"/>
-    <button class="show">Show details</button>
+    <button (click)="gotopostview(home._id)" class="show">Show details</button>
   </li>
 </ul>
